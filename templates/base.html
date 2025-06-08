@@ -4,19 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Café Istanbul</title>
+    <title>
+    {% block title %}
+        
+    {% endblock title %}
+        </title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    
-
 </head>
 <body>
 
     <!-- Header -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">Café Istanbul</a>
+            <a class="navbar-brand" href="#">Café Istanbul</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -24,6 +26,7 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#categories">Categories</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -33,10 +36,9 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="overlay">
-          <div class="hero-text">
             <h1>Welcome to Café Istanbul</h1>
-            <p>Where tradition meets taste in the heart of the city</p>
-          </div>
+            <p>Experience the rich flavors of tradition in the heart of the city</p>
+            <a href="#menu" class="btn btn-light btn-lg">View Menu</a>
         </div>
     </section>
 
@@ -48,26 +50,11 @@
         </div>
     </section>
 
-    <!-- Menu Section -->
-    <section id="menu" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-4">Our Menu</h2>
-            <div class="row">
-                <div class="col-md-4 menu-item">
-                    <h4>Turkish Coffee</h4>
-                    <p>Rich and aromatic traditional coffee</p>
-                </div>
-                <div class="col-md-4 menu-item">
-                    <h4>Baklava</h4>
-                    <p>Sweet layered pastry with nuts and honey</p>
-                </div>
-                <div class="col-md-4 menu-item">
-                    <h4>Apple Tea</h4>
-                    <p>Refreshing and sweet fruit tea</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    
+    {% block content %}
+        
+    {% endblock content %}
+        
 
     <!-- Contact Section -->
     <section id="contact" class="py-5">
@@ -78,15 +65,15 @@
                     <form>
                         <div class="mb-3">
                             <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="name">
+                            <input type="text" class="form-control" id="name" required>
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email">
+                            <input type="email" class="form-control" id="email" required>
                         </div>
                         <div class="mb-3">
                             <label for="message" class="form-label">Message</label>
-                            <textarea class="form-control" id="message" rows="3"></textarea>
+                            <textarea class="form-control" id="message" rows="3" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Send</button>
                     </form>
@@ -101,7 +88,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer text-center">
+    <footer class="footer text-center bg-dark text-white py-4">
         <div class="container">
             <p>&copy; 2025 Café Istanbul. All rights reserved.</p>
         </div>

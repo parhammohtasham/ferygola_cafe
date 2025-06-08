@@ -1,39 +1,26 @@
-
 body {
-    font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
+
 .hero {
-    position: relative;
-    background: url('static/images/header.jpg') center/cover no-repeat;
-    height: 80vh;
-  }
-  .hero .overlay {
-    position: absolute; inset: 0;
-    background: rgba(0,0,0,0.4); /* تیرگی مناسب برای متن */
-  }
-  .hero .hero-text {
-    position: relative;
-    color: #fff;
-    text-align: center;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 0 20px;
-  }
-  .hero .hero-text h1 {
-    font-size: 3rem;
-    font-weight: bold;
-  }
-  .hero .hero-text p {
-    font-size: 1.25rem;
-  }
-  
-  
-  
-.menu-item {
-    margin-bottom: 30px;
+  background-image: url('../images/hero-bg.jpg'); /* مسیر تصویر پس‌زمینه */
+  background-size: cover;
+  color: white;
+  text-align: center;
+  padding: 100px 0;
 }
+
+.card {
+  transition: transform 0.3s;
+}
+.card {
+  height: 100%; /* کارت‌ها را به ارتفاع 100% تنظیم کنید */
+}
+.card:hover {
+  transform: scale(1.05);
+}
+
 .footer {
-    background-color: #222;
-    color: #fff;
-    padding: 40px 0;
+  background-color: #343a40; /* رنگ پس‌زمینه فوتر */
+  color: white; /* رنگ متن فوتر */
 }
