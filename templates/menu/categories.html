@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section id="categories" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Categories</h2>
+        <div class="row">
+            {% for category in categories %}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{{ category.img.url }}" class="card-img-top" alt="{{ category.name }}">
+                    <div class="card-body text-center">
+                        <a href="#" class="card-title">{{ category.name }}</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock content %}

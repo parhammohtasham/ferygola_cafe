@@ -1,10 +1,19 @@
 {% extends 'base.html' %}
-
+{% load static %}
+{% block title %}
+    About Us
+{% endblock title %}
 {% block content %}
 <section class="py-5">
     <div class="container">
-        <h2 class="text-center mb-4">About Us</h2>
-        <p class="text-center">Café Istanbul is a place where tradition meets taste. We offer a variety of beverages and pastries that reflect the rich culture of Istanbul.</p>
+        <img src="{% static 'images/fragola-logo.png' %}" class="img-fluid mb-4" alt="Café Istanbul Logo">
+        <h2 class="text-center mb-4">Fragola</h2>
+        <p class="text-center">
+            📍Kayaşehir Metroway Avm Karşısı
+            Açılış: 10:00 - Kapanış: 24:00
+            📍Beylikdüzü Kavaklı Demir Country / İç Cadde
+            Açılış: 11:00 - Kapanış: 01:00
+            Kayaşehir Blv. No:36/ac Adım İstanbul A1-159 Başakşehir, Istanbul, Turkey</p>
     </div>
 </section>
 {% endblock content %}

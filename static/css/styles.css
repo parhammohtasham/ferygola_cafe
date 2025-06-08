@@ -10,9 +10,16 @@ body {
 }
 
 .card {
+  display: flex; /* استفاده از Flexbox */
+  flex-direction: column; /* ترتیب عمودی */
+  height: 100%; /* ارتفاع 100% */
+    max-width: 100px; /* حداکثر عرض کارت */
+    margin: auto; /* مرکز کردن کارت */
     transition: transform 0.3s;
 }
-
+.card-body {
+  flex-grow: 1; /* اجازه می‌دهد که بدنه کارت فضای اضافی را پر کند */
+}
 .card:hover {
     transform: scale(1.05);
 }

@@ -4,9 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Café Fragola</title>
+    <title>
+    {% block title %}
+    
+    {% endblock title %}
+        </title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
@@ -14,7 +19,7 @@
     <!-- Header -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="{% url 'home' %}">Café Istanbul</a>
+            <a class="navbar-brand" href="{% url 'home' %}"> Café Fragol</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -22,7 +27,7 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'categories' %}">Menu</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact Us</a></li>
                 </ul>
             </div>
@@ -35,6 +40,14 @@
     <!-- Footer -->
     <footer class="footer text-center bg-dark text-white py-4">
         <div class="container">
+            <div class="social-links mb-3">
+                <a href="https://www.instagram.com/fragola.tr" target="_blank" class="text-white me-3">
+                    <i class="fab fa-instagram fa-lg"></i>
+                </a>
+                <a href="https://maps.app.goo.gl/eCBG12rXEn5f89TR6?g_st=aw" target="_blank" class="text-white">
+                    <i class="fas fa-map-marker-alt fa-lg"></i>
+                </a>
+            </div>
             <p>&copy; 2025 This website created by p.mohtasham.far@gmail.com.</p>
         </div>
     </footer>
