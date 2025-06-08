@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section class="hero" style="background-color: rgb(5, 74, 22);">
+    <div class="overlay">
+        <h1>Welcome to Café Fragola</h1>
+        <p>Experience the rich flavors of tradition in the heart of the city</p>
+        <a href="#" class="btn btn-light btn-lg">View Menu</a>
+    </div>
+</section>
+
+<!-- Photo Album Slider -->
+<div class="slider-container">
+    <div class="slider">
+      <div class="slide"><img src="{% static 'images/photo1.PNG' %}" alt="Image 1"></div>
+      <div class="slide"><img src="{% static 'images/photo2.PNG' %}" alt="Image 2"></div>
+      <div class="slide"><img src="{% static 'images/photo3.PNG' %}" alt="Image 3"></div>
+    </div>
+</div>
+  
+  
+{% endblock content %}
+
