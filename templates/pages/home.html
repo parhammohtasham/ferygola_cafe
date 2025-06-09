@@ -8,7 +8,7 @@
     <div class="overlay">
         <h1>Welcome to Café Fragola</h1>
         <p>Experience the rich flavors of tradition in the heart of the city</p>
-        <a href="#" class="btn btn-light btn-lg">View Menu</a>
+        <a href="{% url 'categories' %}" class="btn btn-light btn-lg">View Menu</a>
     </div>
 </section>
 
@@ -20,7 +20,26 @@
       <div class="slide"><img src="{% static 'images/photo3.PNG' %}" alt="Image 3"></div>
     </div>
 </div>
-  
+  <!-- Weekly Schedule -->
+<div class="col-md-6">
+    <h2>Weekly Schedule</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Day</th>
+                <th>Opening Hours</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in schedule %}
+            <tr>
+                <td>{{ item.day }}</td>
+                <td>{{ item.opening_hours }} - {{ item.closing_hours }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
   
 {% endblock content %}
 

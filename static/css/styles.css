@@ -1,5 +1,22 @@
+html, body {
+  height: 100%; /* ارتفاع 100% برای html و body */
+  margin: 0; /* حذف حاشیه‌های پیش‌فرض */
+}
+
 body {
-    font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column; /* چیدمان عمودی */
+}
+
+.content {
+  flex: 1; /* اجازه می‌دهد که محتوای اصلی فضای بیشتری بگیرد */
+}
+
+.footer {
+  background-color: rgb(5, 74, 22); /* رنگ پس‌زمینه فوتر */
+  color: white; /* رنگ متن فوتر */
+  text-align: center; /* مرکز چین کردن متن */
+  padding: 10px; /* فاصله داخلی */
 }
 
 .hero {
@@ -13,7 +30,7 @@ body {
   display: flex; /* استفاده از Flexbox */
   flex-direction: column; /* ترتیب عمودی */
   height: 100%; /* ارتفاع 100% */
-    max-width: 100px; /* حداکثر عرض کارت */
+    max-width: 200px; /* حداکثر عرض کارت */
     margin: auto; /* مرکز کردن کارت */
     transition: transform 0.3s;
 }
@@ -23,12 +40,20 @@ body {
 .card:hover {
     transform: scale(1.05);
 }
-
-.footer {
-    background-color: #343a40; /* رنگ پس‌زمینه فوتر */
-    color: white; /* رنگ متن فوتر */
+.nav-link {
+  color: white;
 }
-.slider-container {
+.navbar {
+  background-color: rgb(5, 74, 22);
+}
+.navbar-brand {
+  color: rgb(138, 49, 49);
+}
+.navbar-nav .nav-item .nav-link {
+  font-size: 1.2em; /* اندازه متن بزرگتر */
+  padding: 15px 20px; /* افزایش padding برای بزرگتر کردن آیتم‌ها */
+}
+.slider-container{
     width: 500px;
     height: 300px;
     overflow: hidden;
@@ -71,4 +96,80 @@ body {
   
     100% { transform: translateX(0); }
   }
+  .slider-container {
+    margin-bottom: 20px; /* فاصله پایین اسلایدر */
+}
+
+.table {
+    margin-top: 20px; /* فاصله بالای جدول */
+    background-color: #fff; /* رنگ پس‌زمینه جدول */
+}
+
+.table th {
+    background-color: rgb(5, 74, 22); /* رنگ پس‌زمینه سرستون‌ها */
+    color: white; /* رنگ متن سرستون‌ها */
+}
+
+.table td {
+    text-align: center; /* مرکز چین کردن متن در سلول‌ها */
+}
+
+.table-bordered {
+    border: 1px solid #dee2e6; /* رنگ مرز جدول */
+}
+
+.table-bordered th, .table-bordered td {
+    border: 1px solid #dee2e6; /* رنگ مرز سلول‌ها */
+}
   
+  .food-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.food-card {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 10px;
+    margin-right: 15px;
+    padding: 10px;
+    align-items: center;
+    width: calc(33% - 20px); /* عرض کارت‌ها */
+    height: 100px; /* ارتفاع ثابت برای کارت‌ها */
+    transition: transform 0.3s; /* افکت انتقال برای hover */
+}
+
+.food-card:hover {
+    transform: scale(1.05); /* بزرگنمایی کارت هنگام hover */
+}
+
+.food-details {
+    flex-grow: 1; /* اجازه می‌دهد که جزئیات فضای بیشتری بگیرند */
+    margin-right: 10px; /* فاصله بین جزئیات و عکس */
+}
+
+.food-card img {
+    width: 100px; /* اندازه عکس */
+    height: auto;
+    border-radius: 5px;
+}
+
+.food-name {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.food-description {
+    color: #666;
+}
+
+.food-price {
+    color: #000;
+    font-weight: bold;
+}
+
+.food-rating {
+    color: #ffcc00; /* رنگ امتیاز */
+}

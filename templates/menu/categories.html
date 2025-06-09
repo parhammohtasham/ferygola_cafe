@@ -8,12 +8,14 @@
         <div class="row">
             {% for category in categories %}
             <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="{{ category.img.url }}" class="card-img-top" alt="{{ category.name }}">
-                    <div class="card-body text-center">
-                        <a href="#" class="card-title">{{ category.name }}</a>
+                <a href="{% url 'foods' category.id %}">
+                    <div class="card">
+                        <img src="{{ category.img.url }}" class="card-img-top" alt="{{ category.name }}">
+                        <div class="card-body text-center">
+                            <p  class="card-title">{{ category.name }}</p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             {% endfor %}
         </div>

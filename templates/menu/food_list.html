@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Food List
+{% endblock title %}
+{% block content %}
+    <div class="food-list">
+        {% for food in foods %}
+            <div class="food-card">
+                <div class="food-details">
+                    <div class="food-name">{{ food.name }}</div>
+                    <div class="food-description">{{ food.description }}</div>
+                    <div class="food-price">₺{{ food.price }}</div> <!-- علامت لیر اضافه شد -->
+                    <div class="food-rating">Rate: {{ food.rate }}</div>
+                </div>
+                <img src="{{ food.img.url }}" alt="{{ food.name }}">
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}

@@ -13,7 +13,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Food)
 class FoodAdmin(admin.ModelAdmin):
-    list_display = ("name", "price", "rate" , "is_active")
+    list_display = ("name", "default_category", "rate" , "is_active")
     list_filter = ("price", "rate" , "is_active")
     search_fields = ("name",)
     list_per_page = 10
