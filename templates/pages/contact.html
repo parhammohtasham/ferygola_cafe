@@ -2,30 +2,49 @@
 {% block title %}
     Contact Us
 {% endblock title %}
+
 {% block content %}
 <section id="contact" class="py-5">
     <div class="container">
         <h2 class="text-center mb-4">Contact Us</h2>
+
+        {% if messages %}
+        <div class="alert alert-success">
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        </div>
+        {% endif %}
+
         <div class="row">
             <div class="col-md-6">
-                <form>
+                <form method="POST">
+                    {% csrf_token %}
+
                     <div class="mb-3">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="name" required>
+                        <label for="id_name" class="form-label">Name</label>
+                        <input type="text" name="name" id="id_name" class="form-control" required value="{{ form.name.value|default_if_none:'' }}">
+                        {{ form.name.errors }}
                     </div>
+
                     <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" required>
+                        <label for="id_email" class="form-label">Email</label>
+                        <input type="email" name="email" id="id_email" class="form-control" required value="{{ form.email.value|default_if_none:'' }}">
+                        {{ form.email.errors }}
                     </div>
+
                     <div class="mb-3">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea class="form-control" id="message" rows="3" required></textarea>
+                        <label for="id_message" class="form-label">Message</label>
+                        <textarea name="message" id="id_message" class="form-control" rows="4" required>{{ form.message.value|default_if_none:'' }}</textarea>
+                        {{ form.message.errors }}
                     </div>
+
                     <button type="submit" class="btn btn-primary">Send</button>
                 </form>
             </div>
+
             <div class="col-md-6">
-                <p><strong>Address:</strong> Kavaklı mh. Yeşilyurt cd. No:132 Demir Country Sitesi İç Cadde Beylikdüzü İstanbul, Istanbul, Turkey</p>
+                <p><strong>Address:</strong> Kavaklı mh. Yeşilyurt cd. No:132 Demir Country Sitesi İç Cadde Beylikdüzü İstanbul</p>
                 <p><strong>Phone:</strong> 05455601285</p>
                 <p><strong>Email:</strong> contact@cafeistanbul.com</p>
             </div>

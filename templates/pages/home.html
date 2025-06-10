@@ -3,43 +3,50 @@
 {% block title %}
     Home
 {% endblock title %}
+
 {% block content %}
+
+<!-- Hero Section -->
 <section class="hero" style="background-color: rgb(5, 74, 22);">
-    <div class="overlay">
+    <div class="overlay text-white text-center py-5">
         <h1>Welcome to Café Fragola</h1>
         <p>Experience the rich flavors of tradition in the heart of the city</p>
-        <a href="{% url 'categories' %}" class="btn btn-light btn-lg">View Menu</a>
+        <a href="{% url 'categories' %}" class="btn btn-light btn-lg mt-3">View Menu</a>
     </div>
 </section>
 
 <!-- Photo Album Slider -->
-<div class="slider-container">
-    <div class="slider">
-      <div class="slide"><img src="{% static 'images/photo1.PNG' %}" alt="Image 1"></div>
-      <div class="slide"><img src="{% static 'images/photo2.PNG' %}" alt="Image 2"></div>
-      <div class="slide"><img src="{% static 'images/photo3.PNG' %}" alt="Image 3"></div>
+<div class="slider-container my-5">
+    <div class="slider d-flex justify-content-center gap-3">
+        <div class="slide"><img src="{% static 'images/photo1.PNG' %}" alt="Image 1" class="img-fluid rounded"></div>
+        <div class="slide"><img src="{% static 'images/photo2.PNG' %}" alt="Image 2" class="img-fluid rounded"></div>
+        <div class="slide"><img src="{% static 'images/photo3.PNG' %}" alt="Image 3" class="img-fluid rounded"></div>
     </div>
 </div>
-  <!-- Weekly Schedule -->
-<div class="col-md-6">
-    <h2>Weekly Schedule</h2>
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Day</th>
-                <th>Opening Hours</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for item in schedule %}
-            <tr>
-                <td>{{ item.day }}</td>
-                <td>{{ item.opening_hours }} - {{ item.closing_hours }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</div>
-  
-{% endblock content %}
 
+<!-- Weekly Schedule -->
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h2 class="text-center mb-4">Weekly Schedule</h2>
+            <table class="table table-striped table-hover text-center border">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Day</th>
+                        <th>Opening Hours</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in schedule %}
+                    <tr class="{% if item.day == today_slug %}table-primary{% endif %}">
+                        <td>{{ item.get_day_display }}</td>
+                        <td>{{ item.opening_hours|time:"H:i" }} - {{ item.closing_hours|time:"H:i" }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

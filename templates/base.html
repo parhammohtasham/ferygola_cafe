@@ -16,24 +16,41 @@
 </head>
 <body>
     <!-- Header -->
-    <nav class="navbar navbar-expand-lg ">
-        <div class="container">
-            <a class="navbar-brand" href="{% url 'home' %}">
-                <img src="{% static 'images/logo.png' %}" alt="logo" class="logo" style="height: 80px;"> <!-- لوگو به جای متن -->
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'categories' %}">Menu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact Us</a></li>
-                </ul>
-            </div>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container d-flex align-items-center justify-content-between">
+      
+          <!-- سمت چپ: لوگو و دکمه‌ها -->
+          <div class="d-flex align-items-center">
+              <a class="navbar-brand me-3" href="{% url 'home' %}">
+                  <img src="{% static 'images/logo.png' %}" alt="logo" class="logo" style="height: 80px;">
+              </a>
+              {% if not user.is_authenticated %}
+                  <a href="{% url 'login' %}" class="btn btn-outline-light btn-sm me-2">Login</a>
+                  <a href="{% url 'signup' %}" class="btn btn-success btn-sm">Sign Up</a>
+              {% else %}
+                  <form method="POST" action="{% url 'logout' %}">
+                      {% csrf_token %}
+                      <button type="submit" class="btn btn-outline-light btn-sm">Logout</button>
+                  </form>
+              {% endif %}
+          </div>
+      
+          <!-- منو سمت راست -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                  <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+                  <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About Us</a></li>
+                  <li class="nav-item"><a class="nav-link" href="{% url 'categories' %}">Menu</a></li>
+                  <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact Us</a></li>
+              </ul>
+          </div>
         </div>
     </nav>
+      
 
     <div class="content">
         {% block content %}

@@ -25,3 +25,7 @@ class WeeklySchedule(models.Model):
 
     def __str__(self):
         return f"{self.day}: {self.opening_hours}"
+    
+    class Meta:
+        ordering = ['day']
+
