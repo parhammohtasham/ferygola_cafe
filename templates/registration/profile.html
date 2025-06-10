@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Profile
+{% endblock %}
+
+{% block content %}
+
+    <div class="container mt-5">
+        <h1 class="text-center">Profile</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-4 text-center">
+                <img src="{{user.image.url}}" alt="logo" class="profile-image" style="height: 150px;">  
+                <h2 class="mt-3">{{ user.username }}</h2>
+                <p class="text-muted">Email: {{ user.email }}</p>
+                <p class="text-muted">First Name: {{ user.first_name }}</p>
+                <p class="text-muted">Last Name: {{ user.last_name }}</p>
+                <p class="text-muted">Address: {{ user.address }}</p>
+                <p class="text-muted">Phone: {{ user.phone }}</p>
+                <p class="text-muted">Joined on: {{ user.joined|date:"F j, Y" }}</p>
+                <a href="{% url 'edit_profile' %}" class="btn btn-primary mt-3">Edit Profile</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

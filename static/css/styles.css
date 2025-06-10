@@ -12,6 +12,14 @@ body {
   flex: 1; /* اجازه می‌دهد که محتوای اصلی فضای بیشتری بگیرد */
 }
 
+.welcome-text {
+  font-size: 16px; /* اندازه فونت */
+  font-weight: bold; /* ضخامت فونت */
+  margin: 0; /* حذف حاشیه */
+  padding: 5px; /* اضافه کردن padding */
+  background-color: rgba(0, 0, 0, 0.5); /* پس‌زمینه نیمه شفاف */
+  border-radius: 5px; /* گوشه‌های گرد */
+}
 .footer {
   background-color: rgb(5, 74, 22); /* رنگ پس‌زمینه فوتر */
   color: white; /* رنگ متن فوتر */
@@ -173,3 +181,4 @@ body {
 .food-rating {
     color: #ffcc00; /* رنگ امتیاز */
 }
+

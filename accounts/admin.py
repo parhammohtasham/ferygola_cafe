@@ -12,7 +12,7 @@ class CustomUserAdmin(admin.ModelAdmin):
     readonly_fields=('joined',)
     fieldsets = (
         (None, {'fields': ('username', 'password')}),
-        ('Personal info', {'fields': ('first_name', 'last_name', 'email')}),
-        ('Location Info', {'fields': ('address', 'phone')}),
+        ('Personal info', {'fields': ('first_name', 'last_name', 'email' , 'image')}),
+        ('Location Info', {'fields': ('address', 'phone')}),    
         ('Joine Date', {'fields': ('joined',)}),
     )
