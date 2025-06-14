@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Article List
+{% endblock title %}
+
+{% block content %}
+    
+    {% for article in articles  %}
+        <a href="{% url 'article_detail' article.id %}">{{article.title}}</a>
+    {% endfor %}
+        
+{% endblock content %}
+    

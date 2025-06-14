@@ -32,7 +32,9 @@
 
             <button type="submit" class="btn btn-primary w-100">Login</button>
         </form>
-
+        <p class="mt-3 text-center">Forget your password? 
+            <a href="{% url 'password_reset' %}">Reset your password</a>
+        </p>
         <p class="mt-3 text-center">Don't have an account? 
             <a href="{% url 'signup' %}">Sign Up</a>
         </p>

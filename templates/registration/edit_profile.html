@@ -33,7 +33,8 @@ Edit Profile
             <label for="phone" class="form-label">Phone</label>
             <input type="text" class="form-control" id="phone" name="phone" value="{{ user.phone }}">
         </div>
-        <button type="submit" class="btn btn-primary">Save Changes</button>
+        <button type="submit" class="btn btn-primary mb-4">Save Changes</button>
     </form>
+    <a href="{% url 'password_change' %}"><button  class="btn btn-warning mb-4">Change Password</button></a>
 </div>
 {% endblock %}

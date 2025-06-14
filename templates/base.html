@@ -29,7 +29,7 @@
                 <a href="{% url 'signup' %}" class="btn btn-success btn-sm">Sign Up</a>
               {% else %}
                 <a class="navbar-brand me-3" href="{% url 'home' %}">
-                    <img src="{{user.image.url}}" alt="logo" class="profile-image" style="height: 80px;">
+                    <img src="" alt="logo" class="profile-image" style="height: 80px;">
                 </a>
                   <a href="{% url 'profile'  %}" class="btn btn-outline-light btn-sm me-2">Profile</a>
                   <p class="text-white me-2 welcome-text">Welcome, {{ user.username }}</p>

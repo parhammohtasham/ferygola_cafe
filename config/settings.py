@@ -39,10 +39,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap5',
+    "crispy_forms",
+    "crispy_bootstrap5",
     'page',
     'menu',
     'accounts',
+    'article',
 ]
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -141,3 +147,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")  # مسیر برای فایل‌ه�
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
