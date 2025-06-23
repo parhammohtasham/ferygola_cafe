@@ -15,10 +15,13 @@ class Article(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse("Article_detail", kwargs={"pk": self.pk})
+        return reverse("article_detail", kwargs={"pk": self.pk})
 
 
 class Comment(models.Model):
     article=models.ForeignKey("Article", on_delete=models.CASCADE , related_name='comments')
     comment=models.TextField(_("کامنت"))
     writer=models.ForeignKey(get_user_model(), verbose_name=_("نویسنده"), on_delete=models.CASCADE)
+
+    def __str__(self) :
+        return self.writer
